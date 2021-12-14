@@ -4,7 +4,6 @@
 */
 
 get_header(); ?>
-
 <!-- Landing Section Start -->
 <section class="landing-section home-landing-section" style="background-image: url('<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-landing-img.png');">
     <div class="container">
