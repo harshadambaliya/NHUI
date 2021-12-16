@@ -181,6 +181,10 @@ a:hover {
     outline: none;
 }
 
+.login-account-header-link {
+    padding: 0 0 0 16px;
+}
+
 
 /* Deafult End */
 
@@ -194,6 +198,20 @@ a:hover {
     line-height: 15px;
     color: #FFFFFF;
     padding: 0 16px !important;
+}
+
+.dark-header .navbar-nav .nav-link {
+    color: #1C1A1D;
+}
+
+.dark-header .navbar-brand {
+    filter: brightness(0);
+}
+
+.cart-login-link,
+.dark-header .login-account-header-link svg,
+.dark-header .cart-header-link svg {
+    filter: brightness(0);
 }
 
 
@@ -736,6 +754,22 @@ a:hover {
     height: 90px !important;
 }
 
+.search-video-section .section-title {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 49px;
+    text-align: center;
+    color: #1C1A1D;
+}
+
+.search-video-img img.img-fluid {
+    margin: 0 auto 20px;
+}
+
+.search-video-section .section-title {
+    margin-bottom: 65px;
+}
+
 
 /************************ Video Page End *************************/
 
@@ -1051,7 +1085,13 @@ a:hover {
 
 .keyword-section {
     background-color: #F5F6F8;
-    padding-bottom: 230px;
+    padding-bottom: 250px;
+    padding-top: 230px;
+    margin-top: -220px;
+}
+
+.page-template-collection .our-contributors-section:after {
+    display: none;
 }
 
 .single-product .site-video-section .search-video-heading .section-title,
@@ -1061,8 +1101,372 @@ a:hover {
     background-color: #F5F6F8;
 }
 
+.keyword-section-heading {
+    margin-bottom: 45px;
+    position: relative;
+}
+
+.keyword-section .section-title {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 49px;
+    position: relative;
+    z-index: 1;
+}
+
+.keyword-section .section-title span {
+    background-color: #F5F6F8;
+    position: relative;
+    z-index: 1;
+    padding-right: 40px;
+}
+
+.keyword-section-heading .section-title:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    right: 0;
+    top: 25px;
+}
+
 
 /************************ Single Product Page End *************************/
+
+
+/************************ Cart Page Start *************************/
+
+.woocommerce-cart {
+    background-color: #F5F6F8;
+}
+
+.woocommerce-cart .entry-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 49px;
+    color: #1C1A1D;
+    margin-bottom: 20px;
+    border-bottom: 0;
+}
+
+.woocommerce-cart table.cart .cart_item img {
+    width: 155px;
+    height: 95px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+.woocommerce-cart .woocommerce table.shop_table {
+    border: none;
+}
+
+.woocommerce-cart .woocommerce table.shop_table td {
+    border-top: 1px solid #000000;
+}
+
+.woocommerce-cart .woocommerce table.shop_table tbody:first-child tr:first-child td,
+.woocommerce-cart .woocommerce table.shop_table tbody:first-child tr:first-child th {
+    border-top: 1px solid;
+}
+
+.woocommerce-cart .product-name a {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 15px;
+    display: block;
+    width: max-content;
+}
+
+.woocommerce-cart .woocommerce-Price-amount {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+    text-align: right;
+    color: #000000;
+}
+
+.woocommerce-cart .woocommerce-Price-currencySymbol {
+    font-size: 0;
+}
+
+.woocommerce-cart .woocommerce-Price-currencySymbol::before {
+    content: "INR";
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.product-description-text {
+    font-size: 10px;
+    line-height: 12px;
+    color: #4479A9;
+    margin-bottom: 15px;
+}
+
+.product-size {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #C4C4C4;
+    margin-right: 20px;
+}
+
+.product-size:last-child {
+    margin-right: 0;
+}
+
+.product-size.active {
+    color: #1C1A1D;
+}
+
+.product-name a:first-child {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #30BE3F;
+    margin-bottom: 0;
+}
+
+.product-size-list {
+    margin-bottom: 0;
+}
+
+.woocommerce-cart .woocommerce table.shop_table td {
+    padding: 15px 10px;
+}
+
+.woocommerce-cart .product-name a:last-child {
+    margin-bottom: 0;
+}
+
+.woocommerce-cart .product-name a:last-child:hover {
+    color: red !important;
+    background-color: transparent;
+}
+
+.countinue-shop-link {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.countinue-shop-link svg {
+    margin-right: 10px;
+}
+
+.cart-bottom-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.woocommerce-cart .woocommerce table.shop_table tbody:first-child tr:last-child td,
+.woocommerce-cart .woocommerce table.shop_table tbody:first-child tr:last-child th {
+    border-bottom: 1px solid;
+}
+
+.cart-collaterals .order-total {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+    text-align: right;
+    color: #000000;
+}
+
+.cart-collaterals h2,
+.cart-collaterals .cart-subtotal {
+    display: none;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals tr th,
+.woocommerce-cart .cart-collaterals .cart_totals tr td {
+    border: none !important;
+}
+
+.wc-proceed-to-checkout a.alt.checkout-button {
+    background: #30BE3F;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0;
+    line-height: 1;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 9px 20px;
+    margin-bottom: 0;
+}
+
+.wc-proceed-to-checkout a.alt.checkout-button:hover {
+    background: #269c32;
+}
+
+.wc-proceed-to-checkout a.alt.checkout-button:after {
+    content: "Buy Now";
+    font-size: 30px;
+}
+
+.woocommerce-cart .cart-collaterals {
+    position: relative;
+}
+
+.woocommerce-cart .cart-collaterals>img {
+    position: absolute;
+    bottom: 8px;
+    right: 320px;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout {
+    padding: 1em 0 0;
+}
+
+.wc-proceed-to-checkout::after,
+.wc-proceed-to-checkout::before {
+    display: none;
+}
+
+.woocommerce-cart .content-area {
+    margin-bottom: 150px;
+}
+
+
+/************************ Cart Page End *************************/
+
+
+/************************ Error Page Start *************************/
+
+.error-landing-content .section-title {
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 94px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.section-description {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 720px;
+    margin: 0 auto 30px;
+}
+
+.error-landing-section {
+    padding: 230px 0 170px;
+    min-height: 100vh;
+}
+
+.error-landing-content .btn {
+    border-radius: 4px;
+}
+
+.error404 .site-footer,
+.page-template-thank-you .site-footer {
+    display: none;
+}
+
+.thank-you-landing-section .section-description {
+    width: 430px;
+}
+
+.thank-you-landing-section .section-description:nth-child(2) {
+    margin-bottom: 60px;
+}
+
+.thank-you-landing-section .section-description:nth-child(3) {
+    width: auto;
+}
+
+.login-account-header-link {
+    text-align: center;
+}
+
+.login-account-header-link svg {
+    display: block;
+}
+
+.login-account-header-link,
+.cart-login-link {
+    font-size: 13px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.cart-login-link:hover {
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.login-account-header-link svg {
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.cart-header-link {
+    padding: 0 16px;
+    position: relative;
+}
+
+.cart-count {
+    font-weight: 900;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #30BE3F;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.xoo-el-sidebar {
+    display: none;
+}
+
+.xoo-el-srcont {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(35px);
+    border-radius: 8px;
+}
+
+.xoo-el-inmodal {
+    background: unset;
+}
+
+.xoo-el-popup-active .xoo-el-opac {
+    opacity: 0.7;
+    background-color: #fff;
+}
+
+.xoo-el-popup-active .xoo-el-opac {
+    background-color: #a5a5a5;
+}
+
+.xoo-el-form-container button.btn.button.xoo-el-action-btn {
+    background-color: #30BE3F;
+    width: auto;
+    margin: auto;
+    display: block;
+}
+
+.xoo-el-action-form {
+    width: 60%;
+}
+
+
+/************************ Error Page End *************************/
 
 
 /************************ Footer Start *************************/

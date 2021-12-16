@@ -1,3 +1,12 @@
+jQuery(window).load(function() {
+    if (jQuery('body').hasClass("page-id-18")) {
+        jQuery("body").addClass("dark-header");
+    }
+    if (jQuery('body').hasClass("single-product")) {
+        jQuery("body").addClass("dark-header");
+    }
+});
+
 jQuery(document).ready(function($) {
     $('.video-icon').click(function() {
         if ($(this).siblings("video").get(0).paused) {
@@ -120,13 +129,8 @@ jQuery(document).ready(function($) {
     var cw = $('.all-images-content .image-card img').width();
     $('.all-images-content .image-card img').css({ 'height': cw + 'px' });
 
-
-
-
-
     var myVideoPlayer = document.getElementById('video1'),
         meta = document.getElementById('video1-time');
-
 
     myVideoPlayer.addEventListener('loadedmetadata', function() {
         var duration = myVideoPlayer.duration;

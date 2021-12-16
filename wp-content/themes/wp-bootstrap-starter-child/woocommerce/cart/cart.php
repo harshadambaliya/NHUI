@@ -23,16 +23,16 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-		<thead>
+		<!-- <thead>
 			<tr>
 				<th class="product-remove">&nbsp;</th>
 				<th class="product-thumbnail">&nbsp;</th>
-				<th class="product-name"><?php esc_html_e( 'Product', 'wp-bootstrap-starter' ); ?></th>
-				<th class="product-price"><?php esc_html_e( 'Price', 'wp-bootstrap-starter' ); ?></th>
-				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'wp-bootstrap-starter' ); ?></th>
-				<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'wp-bootstrap-starter' ); ?></th>
+				<th class="product-name"><?php // esc_html_e( 'Product', 'wp-bootstrap-starter' ); ?></th>
+				<th class="product-price"><?php // esc_html_e( 'Price', 'wp-bootstrap-starter' ); ?></th>
+				<th class="product-quantity"><?php // esc_html_e( 'Quantity', 'wp-bootstrap-starter' ); ?></th>
+				<th class="product-subtotal"><?php // esc_html_e( 'Subtotal', 'wp-bootstrap-starter' ); ?></th>
 			</tr>
-		</thead>
+		</thead> -->
 		<tbody>
 			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
@@ -44,14 +44,64 @@ do_action( 'woocommerce_before_cart' ); ?>
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
-					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 	'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-						<td class="product-remove">
+						<!-- <td class="product-remove">
+							<?php
+								// echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								// 	'woocommerce_cart_item_remove_link',
+								// 	sprintf(
+								// 		'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+								// 		esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+								// 		esc_html__( 'Remove this item', 'wp-bootstrap-starter' ),
+								// 		esc_attr( $product_id ),
+								// 		esc_attr( $_product->get_sku() )
+								// 	),
+								// 	$cart_item_key
+								// );
+							?>
+						</td> -->
+
+						<td class="product-thumbnail">
+							<?php
+								$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+
+								if ( ! $product_permalink ) {
+									echo $thumbnail; // PHPCS: XSS ok.
+								} else {
+									printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+								}
+							?>
+						</td>
+
+						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'wp-bootstrap-starter' ); ?>">
+							<?php
+
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( $_product->get_categories() ), $cart_item, $cart_item_key ) );
+
+								if ( ! $product_permalink ) {
+									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
+								} else {
+									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+								}
+
+								do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
+
+								// Meta data.
+								echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
+
+								// Backorder notification.
+								if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
+									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'wp-bootstrap-starter' ) . '</p>', $product_id ) );
+								}
+
+							?>
 							<?php
 								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									'woocommerce_cart_item_remove_link',
 									sprintf(
-										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">Delete</a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 										esc_html__( 'Remove this item', 'wp-bootstrap-starter' ),
 										esc_attr( $product_id ),
@@ -62,67 +112,17 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 						</td>
 
-						<td class="product-thumbnail">
-						<?php
-						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-
-						if ( ! $product_permalink ) {
-							echo $thumbnail; // PHPCS: XSS ok.
-						} else {
-							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
-						}
-						?>
+						<td class="product-description">
+							<p class="product-description-text">2125 x 1417 px (17.99 x 12.00 cm) 300 dpi | 3.0 MP</p>
+							<p class="product-size-list">
+								<span class="product-size">Small</span>
+								<span class="product-size active">Medium</span>
+								<span class="product-size">Large</span>
+								<span class="product-size">HD</span>
+							</p>
 						</td>
-
-						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'wp-bootstrap-starter' ); ?>">
-						<?php
-						if ( ! $product_permalink ) {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
-						} else {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
-						}
-
-						do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
-
-						// Meta data.
-						echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
-
-						// Backorder notification.
-						if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'wp-bootstrap-starter' ) . '</p>', $product_id ) );
-						}
-						?>
-						</td>
-
-						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'wp-bootstrap-starter' ); ?>">
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
-						</td>
-
-						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'wp-bootstrap-starter' ); ?>">
-						<?php
-						if ( $_product->is_sold_individually() ) {
-							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-						} else {
-							$product_quantity = woocommerce_quantity_input(
-								array(
-									'input_name'   => "cart[{$cart_item_key}][qty]",
-									'input_value'  => $cart_item['quantity'],
-									'max_value'    => $_product->get_max_purchase_quantity(),
-									'min_value'    => '0',
-									'product_name' => $_product->get_name(),
-								),
-								$_product,
-								false
-							);
-						}
-
-						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
-						?>
-						</td>
-
-						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'wp-bootstrap-starter' ); ?>">
+						
+						<td class="product-subtotal text-right" data-title="<?php esc_attr_e( 'Total', 'wp-bootstrap-starter' ); ?>">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
@@ -135,42 +135,59 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
-			<tr>
+			<!-- <tr>
 				<td colspan="6" class="actions">
 
-					<?php if ( wc_coupons_enabled() ) { ?>
+					<?php // if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
-							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'wp-bootstrap-starter' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'wp-bootstrap-starter' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'wp-bootstrap-starter' ); ?>"><?php esc_attr_e( 'Apply coupon', 'wp-bootstrap-starter' ); ?></button>
-							<?php do_action( 'woocommerce_cart_coupon' ); ?>
+							<label for="coupon_code"><?php // esc_html_e( 'Coupon:', 'wp-bootstrap-starter' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php // esc_attr_e( 'Coupon code', 'wp-bootstrap-starter' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php // esc_attr_e( 'Apply coupon', 'wp-bootstrap-starter' ); ?>"><?php //esc_attr_e( 'Apply coupon', 'wp-bootstrap-starter' ); ?></button>
+							<?php // do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
-					<?php } ?>
+					<?php // } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'wp-bootstrap-starter' ); ?>"><?php esc_html_e( 'Update cart', 'wp-bootstrap-starter' ); ?></button>
+					<button type="submit" class="button" name="update_cart" value="<?php // esc_attr_e( 'Update cart', 'wp-bootstrap-starter' ); ?>"><?php // esc_html_e( 'Update cart', 'wp-bootstrap-starter' ); ?></button>
 
-					<?php do_action( 'woocommerce_cart_actions' ); ?>
+					<?php // do_action( 'woocommerce_cart_actions' ); ?>
 
-					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+					<?php // wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 				</td>
-			</tr>
+			</tr> -->
 
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 		</tbody>
 	</table>
+
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
 
 <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
-
-<div class="cart-collaterals">
-	<?php
-		/**
-		 * Cart collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-		do_action( 'woocommerce_cart_collaterals' );
-	?>
+<div class="cart-bottom-content">
+	<a href="#" class="countinue-shop-link">
+		<svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g clip-path="url(#clip0_1_1880)">
+				<path d="M26.5 9.99023L2.5 9.99023" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M9.56982 1.5L1.78983 9.28C1.39983 9.67 1.39983 10.3 1.78983 10.69L9.56982 18.47" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+			</g>
+			<defs>
+				<clipPath id="clip0_1_1880">
+					<rect width="19.97" height="28" fill="white" transform="translate(28) rotate(90)"/>
+				</clipPath>
+			</defs>
+		</svg>
+		<span>Continue shopping</span>
+	</a>
+	<div class="cart-collaterals">
+		<img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/payment-accepted-type.png" alt="">
+		<?php
+			/**
+			 * Cart collaterals hook.
+			 *
+			 * @hooked woocommerce_cross_sell_display
+			 * @hooked woocommerce_cart_totals - 10
+			 */
+			do_action( 'woocommerce_cart_collaterals' );
+		?>
+	</div>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

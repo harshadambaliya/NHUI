@@ -5,7 +5,7 @@
 
 get_header(); ?>
 <!-- Landing Section Start -->
-<section class="landing-section home-landing-section" style="background-image: url('<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-landing-img.png');">
+<section class="landing-section home-landing-section" style="background-image: url('<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-landing-img.png');">
     <div class="container">
         <div class="home-landing-content">
             <h1 class="section-title">100+ HD Quality Widlife Videos</h1>
@@ -111,8 +111,8 @@ get_header(); ?>
             <div class="row all-images-content">
                 <div class="col col-12 col-md-6 col-lg-6 image-card Tigers">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -152,8 +152,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Lions">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -193,8 +193,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Nature">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -234,8 +234,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Birds">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -275,8 +275,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Lions">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -316,8 +316,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Tigers">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -357,8 +357,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Birds">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -398,8 +398,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Nature">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -439,8 +439,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Tigers">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -480,8 +480,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Birds">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -521,8 +521,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Nature">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -562,8 +562,8 @@ get_header(); ?>
                 </div>
                 <div class="col col-12 col-md-6 col-lg-6 image-card Birds">
                     <div class="video">
-                        <span class="video-icon"><img src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/video-play-icon.png" alt="" class="img-fluid"></span>
-                        <video class="w-100" src="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/mov_bbb.mp4" poster="<?php SITE_URL(); ?>/wp-content/uploads/2021/09/news-updates-video.png" ></video>
+                        <span class="video-icon"><img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/video-play-icon.png" alt="" class="img-fluid"></span>
+                        <video class="w-100" src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/mov_bbb.mp4" poster="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/news-updates-video.png" ></video>
                     </div>
                     <div class="image-card-body">
                         <h3 class="image-card-title">The name of the Photograph by Name Surname</h3>
@@ -619,7 +619,7 @@ get_header(); ?>
                 <div class="search-video-item">
                     <div class="search-video-card">
                         <div class="search-video-card-img">
-                            <img src="http://nhui.notioninfosoft.com/wp-content/uploads/2021/09/carnivore.png" alt="Video Img" class="img-fluid">
+                            <img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/carnivore.png" alt="Video Img" class="img-fluid">
                         </div>
                         <div class="search-video-body">
                             <h3 class="search-video-title">Carnivore</h3>
@@ -630,7 +630,7 @@ get_header(); ?>
                 <div class="search-video-item">
                     <div class="search-video-card">
                         <div class="search-video-card-img">
-                            <img src="http://nhui.notioninfosoft.com/wp-content/uploads/2021/09/sea-world.png" alt="Video Img" class="img-fluid">
+                            <img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/sea-world.png" alt="Video Img" class="img-fluid">
                         </div>
                         <div class="search-video-body">
                             <h3 class="search-video-title">The Sea World</h3>
@@ -641,7 +641,7 @@ get_header(); ?>
                 <div class="search-video-item">
                     <div class="search-video-card">
                         <div class="search-video-card-img">
-                            <img src="http://nhui.notioninfosoft.com/wp-content/uploads/2021/09/birds.png" alt="Video Img" class="img-fluid">
+                            <img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/birds.png" alt="Video Img" class="img-fluid">
                         </div>
                         <div class="search-video-body">
                             <h3 class="search-video-title">Birds</h3>
@@ -652,7 +652,7 @@ get_header(); ?>
                 <div class="search-video-item">
                     <div class="search-video-card">
                         <div class="search-video-card-img">
-                            <img src="http://nhui.notioninfosoft.com/wp-content/uploads/2021/09/crazy-birds.png" alt="Video Img" class="img-fluid">
+                            <img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/crazy-birds.png" alt="Video Img" class="img-fluid">
                         </div>
                         <div class="search-video-body">
                             <h3 class="search-video-title">Crazy Birds</h3>
@@ -663,7 +663,7 @@ get_header(); ?>
                 <div class="search-video-item">
                     <div class="search-video-card">
                         <div class="search-video-card-img">
-                            <img src="http://nhui.notioninfosoft.com/wp-content/uploads/2021/09/fox.png" alt="Video Img" class="img-fluid">
+                            <img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/fox.png" alt="Video Img" class="img-fluid">
                         </div>
                         <div class="search-video-body">
                             <h3 class="search-video-title">Fox</h3>
@@ -674,7 +674,7 @@ get_header(); ?>
                 <div class="search-video-item">
                     <div class="search-video-card">
                         <div class="search-video-card-img">
-                            <img src="http://nhui.notioninfosoft.com/wp-content/uploads/2021/09/carnivore.png" alt="Video Img" class="img-fluid">
+                            <img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/carnivore.png" alt="Video Img" class="img-fluid">
                         </div>
                         <div class="search-video-body">
                             <h3 class="search-video-title">Birds</h3>
@@ -685,7 +685,7 @@ get_header(); ?>
                 <div class="search-video-item">
                     <div class="search-video-card">
                         <div class="search-video-card-img">
-                            <img src="http://nhui.notioninfosoft.com/wp-content/uploads/2021/09/crazy-birds.png" alt="Video Img" class="img-fluid">
+                            <img src="<?php echo SITE_URL(); ?>/wp-content/uploads/2021/12/crazy-birds.png" alt="Video Img" class="img-fluid">
                         </div>
                         <div class="search-video-body">
                             <h3 class="search-video-title">Crazy Birds</h3>
